@@ -11,10 +11,7 @@ keywords = []
 while user_answer == "yes":
    keywords.append(input("enter keywords: "))
    user_answer = input("enter yes or no: ")
-
-
 max_vacancy = int(input("How many vacancies do you want? "))
-
 
 l = []
 target_url='https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?{}&location=Tel%20Aviv&geoId=101620260&start={}'
@@ -33,9 +30,7 @@ for keyword in keywords:
                 jobid = alljobs_on_this_page[x].find("div", {"class": "base-card"}).get('data-entity-urn').split(":")[3]
                 l.append(jobid)
 
-
 jobs_table = {"vacancy_title":[],"company_title":[],"description":[],"seniority_level":[],"employment_type":[],"job_function":[],"industries":[]}
-
 l = list(set(l))
 for id in l:
     time.sleep(2)
@@ -73,7 +68,6 @@ for id in l:
     jobs_table["employment_type"].append(employment_type)
     jobs_table["job_function"].append(job_function)
     jobs_table["industries"].append(industries)
-
 
 df = pd.DataFrame(jobs_table)
 df.to_excel(f"{uuid.uuid4()}.xlsx")
