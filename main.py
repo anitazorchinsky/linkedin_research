@@ -13,20 +13,25 @@ while user_answer == "yes":
    user_answer = input("enter yes or no: ")
 
 
-MAX_VACANCY = int(input("How many vacancies do you want? "))
+max_vacancy = int(input("How many vacancies do you want? "))
 
 
 l = []
 target_url='https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?{}&location=Tel%20Aviv&geoId=101620260&start={}'
 for keyword in keywords:
-    for i in range(0,MAX_VACANCY,10):
+    for i in range(0, max_vacancy, 10):
         time.sleep(2)
         res = requests.get(target_url.format(urllib.parse.urlencode({"keywords": keyword }),i))
         soup = BeautifulSoup(res.text,'html.parser')
         alljobs_on_this_page = soup.find_all("li")
         for x in range(0,len(alljobs_on_this_page)):
-            jobid = alljobs_on_this_page[x].find("div",{"class":"base-card"}).get('data-entity-urn').split(":")[3]
-            l.append(jobid)
+            try:
+                jobid = alljobs_on_this_page[x].find("div",{"class":"base-card"}).get('data-entity-urn').split(":")[3]
+                l.append(jobid)
+            except:
+                time.sleep(2)
+                jobid = alljobs_on_this_page[x].find("div", {"class": "base-card"}).get('data-entity-urn').split(":")[3]
+                l.append(jobid)
 
 
 jobs_table = {"vacancy_title":[],"company_title":[],"description":[],"seniority_level":[],"employment_type":[],"job_function":[],"industries":[]}
