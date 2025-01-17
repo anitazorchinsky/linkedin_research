@@ -11,5 +11,3 @@ currentJobId=3829668926 - first job on list
 &position=1 
 &pageNum=0 
 &page=0
-
-
