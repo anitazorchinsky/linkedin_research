@@ -6,11 +6,18 @@ import urllib.parse
 import uuid
 
 
+
 user_answer = "yes"
 keywords = []
-while user_answer == "yes":
-   keywords.append(input("enter keywords: "))
-   user_answer = input("enter yes or no: ")
+if user_answer == input("do want to choose vacancy manually?: "):
+    while user_answer == "yes":
+       keywords.append(input("enter keywords: "))
+       user_answer = input("enter yes or no: ")
+else:
+    df = pd.read_excel("ALL_VACANCY.xlsx")
+    keywords = df["vacancy_title"].unique()
+    count = df["vacancy_title"].value_counts()
+    print(count)
 max_vacancy = int(input("How many vacancies do you want? "))
 
 l = []
