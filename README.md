@@ -32,7 +32,6 @@ we provide data-driven guidance for **job seekers, recruiters, and industry prof
 - **Matplotlib** (Data Visualization)
 - **Excel** (Storing Results)
 
-## 📊 Sample Job Search URL
-This is an example of a LinkedIn job search URL used in the scraping process:
+
 
 
