@@ -1,13 +1,38 @@
-# linkedin_research
-## Job Market Insights for Career Growth (Israel-2024)
- -[X] Purpose: To describe the current state of job market demands by identifying the most required skills and mapping them to roles and industries.
+# Analyzing IT Job Market Trends: A LinkedIn Job Listing Scraping Project
 
-https://www.linkedin.com/jobs/search/? - link Base 
-currentJobId=3829668926 - first job on list 
-&geoId=101620260 
-&keywords=python
-&origin=JOB_SEARCH_PAGE_KEYWORD_AUTOCOMPLETE
-&refresh=false
-&position=1 
-&pageNum=0 
-&page=0
+## 📌 Project Overview
+This project analyzes **job market trends** by scraping LinkedIn job postings to identify the most in-demand **skills, job roles,
+and industries** in Israel and beyond.
+By processing job descriptions and extracting insights,
+we provide data-driven guidance for **job seekers, recruiters, and industry professionals** to align their skill sets with market demands.
+
+## 🎯 Key Objectives
+✅ **Identify the most required skills** in IT job listings.  
+✅ **Analyze job market trends** based on real LinkedIn job postings.  
+✅ **Compare regional skill demands** in Israel, the USA, Canada, and the EU.  
+✅ **Visualize findings** using charts and tables.  
+
+## 🔍 Data Collection Process
+1. **Web Scraping LinkedIn**: Extracts job postings based on user-defined search keywords.
+2. **Data Processing**: Cleans and structures job descriptions to extract key information.
+3. **Skills & Job Role Analysis**: Identifies common industry skills and their demand.
+4. **Visualization & Insights**: Generates graphs and charts to present findings.
+
+## 🌍 Regions Covered
+- 🇮🇱 **Israel**  
+- 🇺🇸 **USA**  
+- 🇨🇦 **Canada**  
+- 🇪🇺 **European Union (EU)**  
+
+## 🛠 Technologies Used
+- **Python** (Data Collection & Processing)
+- **BeautifulSoup** (Web Scraping)
+- **Requests** (Fetching Job Listings)
+- **Pandas** (Data Manipulation)
+- **Matplotlib** (Data Visualization)
+- **Excel** (Storing Results)
+
+## 📊 Sample Job Search URL
+This is an example of a LinkedIn job search URL used in the scraping process:
+
+
